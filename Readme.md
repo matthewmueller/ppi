@@ -29,6 +29,8 @@ This library is a test-driven approach to determining the PPI on a variety of pi
 - photo from camera (leica)
 - iphone 4 photo
 - iphone 5s photo
+- samsung s3
+- ipad 3
 - old internet photo that lacks exif
 
 To test a photo from your device simply add it to `test/images`, run the tests with `make test`, then inspect the exif data inside `test/exif`. Hopefully there will be enough data to determine the PPI.

@@ -16,32 +16,61 @@ var basename = path.basename;
 var extname = path.extname;
 var exif = require('exif2');
 
-describe('ppi', function() {
+describe('ppi(exif)', function() {
 
-  it ('should find ppi of retina screenshot', function() {
-    var exif = require(exifpath + 'retina-screenshot-from-mac.json');
-    assert(ppi(exif) == 144)
-  });
+  describe('should find ppi of:', function() {
+    it ('retina screenshot from mac', function() {
+      var exif = require(exifpath + 'retina-screenshot-from-mac.json');
+      assert(ppi(exif) == 144)
+    });
 
-  it ('should find ppi of an iphone 4 photo', function() {
-    var exif = require(exifpath + 'photo-from-iphone-4.json');
-    assert(ppi(exif) == 72)
-  });
+    it ('photo from an iphone 4', function() {
+      var exif = require(exifpath + 'photo-from-iphone-4.json');
+      assert(ppi(exif) == 72)
+    });
 
-  it ('should find ppi of camera (leica)', function() {
-    var exif = require(exifpath + 'photo-from-leica-camera.json');
-    assert(ppi(exif) == 180)
-  });
+    it ('photo from an iphone 5s', function() {
+      var exif = require(exifpath + 'photo-from-iphone-5s.json');
+      assert(ppi(exif) == 72)
+    });
 
-  it ('should not find ppi of old internet photo', function() {
-    var exif = require(exifpath + 'old-internet-photo.json');
-    assert(ppi(exif) == false)
-  });
+    it ('photo from an ipad 3', function() {
+      var exif = require(exifpath + 'photo-from-ipad-3.json');
+      assert(ppi(exif) == 72)
+    });
 
-  it ('should not find ppi of screenshot from non-retina screen', function() {
-    var exif = require(exifpath + 'screenshot-from-ubuntu.json');
-    assert(ppi(exif) == false)
-  });
+    it ('photo from an samsung s3', function() {
+      var exif = require(exifpath + 'photo-from-samsung-s3.json');
+      assert(ppi(exif) == 72)
+    });
+
+    it ('photo from a camera (leica)', function() {
+      var exif = require(exifpath + 'photo-from-leica-camera.json');
+      assert(ppi(exif) == 180)
+    });
+  })
+
+  describe('should not find ppi of:', function() {
+    it ('old photo from the internet', function() {
+      var exif = require(exifpath + 'old-internet-photo.json');
+      assert(ppi(exif) == false)
+    });
+
+    it ('screenshot from ubuntu', function() {
+      var exif = require(exifpath + 'screenshot-from-ubuntu.json');
+      assert(ppi(exif) == false)
+    });
+
+    it ('screenshot from ipad 3', function() {
+      var exif = require(exifpath + 'retina-screenshot-from-ipad-3.json');
+      assert(ppi(exif) == false)
+    });
+
+    it ('screenshot from iphone 5s', function() {
+      var exif = require(exifpath + 'retina-screenshot-from-iphone-5s.json');
+      assert(ppi(exif) == false)
+    });
+  })
 
   before(function(done) {
     mkdir(exifpath);
