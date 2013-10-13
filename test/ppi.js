@@ -48,6 +48,11 @@ describe('ppi(exif)', function() {
       var exif = require(exifpath + 'photo-from-leica-camera.json');
       assert(ppi(exif) == 180)
     });
+
+    it ('screenshot from windows', function() {
+      var exif = require(exifpath + 'screenshot-from-windows.json');
+      assert(ppi(exif) == 96)
+    });
   })
 
   describe('should not find ppi of:', function() {

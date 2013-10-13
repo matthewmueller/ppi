@@ -38,6 +38,17 @@ This library is a test-driven approach to determining the PPI on a variety of pi
 
 To test a photo from your device simply add it to `test/images`, run the tests with `make test`, then inspect the exif data inside `test/exif`. Hopefully there will be enough data to determine the PPI.
 
+## TODO
+
+Depending on what kind of computer the screenshot was taken on the PPI will change:
+
+- Non-retina mac: 72 ppi
+- Retina mac: 144 ppi
+- Windows: 96 ppi
+- Linux: 96 ppi (?)
+
+We can provide sensible defaults for images that we know are take on a specific computer
+
 ## Test
 
     make test
