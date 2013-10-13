@@ -48,7 +48,7 @@ Depending on what kind of computer the screenshot was taken on the PPI will chan
 - Windows: 96 ppi
 - Linux: 96 ppi (?)
 
-We can provide sensible defaults for images that we know are take on a specific computer
+We can provide sensible defaults for images that we know are taken on a specific computer
 
 ## Test
 
