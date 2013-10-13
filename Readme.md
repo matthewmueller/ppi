@@ -6,17 +6,18 @@
 ## Example
 
 ```js
+var PPI = require('ppi');
 var parse = require('exif2');
 var exif = parse('./photo.png');
 
-var PPI = ppi(exif) || 72;
+var ppi = PPI(exif);
 ```
 
 ## API
 
 ### `ppi(exif)`
 
-Determine the PPI of an image. If it cannot find the PPI, otherwise returning `false`.
+Determine the PPI of an image. If it cannot find the PPI, `ppi` returns `false`.
 
 ### Support
 
@@ -26,12 +27,14 @@ This library is a test-driven approach to determining the PPI on a variety of pi
 
 - screenshot
 - screenshot from retina computer
+- screenshot from ipad 3
 - photo from camera (leica)
 - iphone 4 photo
 - iphone 5s photo
+- iphone 5s screenshot
 - samsung s3
 - ipad 3
-- old internet photo that lacks exif
+- old internet photo
 
 To test a photo from your device simply add it to `test/images`, run the tests with `make test`, then inspect the exif data inside `test/exif`. Hopefully there will be enough data to determine the PPI.
 
