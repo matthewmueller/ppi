@@ -1,0 +1,15 @@
+{
+  "name": "ppi",
+  "version": "0.0.1",
+  "description": "find the ppi of an image",
+  "keywords": [],
+  "author": "Matthew Mueller <mattmuelle@gmail.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "better-assert": "*",
+    "exif2": "*",
+    "mkdirp": "*"
+  },
+  "main": "index"
+}
