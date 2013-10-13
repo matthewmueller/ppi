@@ -1,9 +1,43 @@
 
 # ppi
 
-  find the ppi of an image
+  Find the PPI (pixels per inch) of an image.
 
-## License 
+## Example
+
+```js
+var parse = require('exif2');
+var exif = parse('./photo.png');
+
+var PPI = ppi(exif) || 72;
+```
+
+## API
+
+### `ppi(exif)`
+
+Determine the PPI of an image. If it cannot find the PPI, otherwise returning `false`.
+
+### Support
+
+Parsing exif data is not trivial. There are many different formats and lots of pictures (especially those from the internet) do not have enough data to determine the PPI.
+
+This library is a test-driven approach to determining the PPI on a variety of pictures. Right now this library tests the following image sources:
+
+- screenshot
+- screenshot from retina computer
+- photo from camera (leica)
+- iphone 4 photo
+- iphone 5s photo
+- old internet photo that lacks exif
+
+To test a photo from your device simply add it to `test/images`, run the tests with `make test`, then inspect the exif data inside `test/exif`. Hopefully there will be enough data to determine the PPI.
+
+## Test
+
+    make test
+
+## License
 
 (The MIT License)
 

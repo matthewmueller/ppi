@@ -11,7 +11,6 @@ var fs = require('fs');
 var path = require('path');
 var readdir = fs.readdirSync;
 var mkdir = require('mkdirp');
-var rmdir = fs.rmdirSync;
 var write = fs.writeFileSync;
 var basename = path.basename;
 var extname = path.extname;
@@ -20,7 +19,7 @@ var exif = require('exif2');
 describe('ppi', function() {
 
   it ('should find ppi of retina screenshot', function() {
-    var exif = require(exifpath + 'retina-screenshot.json');
+    var exif = require(exifpath + 'retina-screenshot-from-mac.json');
     assert(ppi(exif) == 144)
   });
 
@@ -40,7 +39,7 @@ describe('ppi', function() {
   });
 
   it ('should not find ppi of screenshot from non-retina screen', function() {
-    var exif = require(exifpath + 'normal-screenshot.json');
+    var exif = require(exifpath + 'screenshot-from-ubuntu.json');
     assert(ppi(exif) == false)
   });
 
@@ -62,9 +61,5 @@ describe('ppi', function() {
     function next() {
       if (!--pending) done();
     }
-  });
-
-  after(function() {
-    // rmdir(exifpath);
   });
 });
