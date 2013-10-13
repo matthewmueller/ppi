@@ -43,6 +43,8 @@ function ppi(exif) {
   if (exif['pixels per unit x'] && exif['pixels per unit y']) {
     var x = +exif['pixels per unit x'];
     var y = +exif['pixels per unit y'];
+
+    // arbitrary avg, should normally be equal
     var res = (x + y) / 2;
     return Math.round(res * ratio);
   }
