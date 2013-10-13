@@ -25,8 +25,9 @@ Parsing exif data is not trivial. There are many different formats and lots of p
 
 This library is a test-driven approach to determining the PPI on a variety of pictures. Right now this library tests the following image sources:
 
-- screenshot
-- screenshot from retina computer
+- screenshot from ubuntu
+- screenshot from retina mac
+- screenshot from windows
 - screenshot from ipad 3
 - photo from camera (leica)
 - iphone 4 photo
