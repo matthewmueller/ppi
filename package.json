@@ -11,5 +11,10 @@
     "exif2": "*",
     "mkdirp": "*"
   },
-  "main": "index"
+  "main": "index",
+  "component": {
+    "scripts": {
+      "ppi/index.js": "index.js"
+    }
+  }
 }
