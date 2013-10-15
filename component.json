@@ -1,0 +1,7 @@
+{
+  "name": "ppi",
+  "version": "0.0.1",
+  "description": "find the pixels per inch of a photo from the exif data",
+  "main": "index.js",
+  "scripts": [ "index.js" ]
+}
